@@ -1,0 +1,13 @@
+body {
+  min-height: 100vh;
+  background-color: #fff6f6 !important;
+}
+.btn:focus,
+input:focus {
+  box-shadow: none !important;
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 50% !important;
+  }
+}
