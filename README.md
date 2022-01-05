@@ -34,6 +34,9 @@ $ npm install
 
 # Run the app
 $ npm start
+
+# API KEY
+- Replace your API Key with `process.env.REACT_APP_API_KEY`
 ```
 
 ## Contact
