@@ -32,11 +32,12 @@ $ git clone https://github.com/sfkse/CurrencyConverter.git
 # Install dependencies
 $ npm install
 
+# API KEY
+- Replace your API Key with `process.env.REACT_APP_API_KEY`
+
 # Run the app
 $ npm start
 
-# API KEY
-- Replace your API Key with `process.env.REACT_APP_API_KEY`
 ```
 
 ## Contact
