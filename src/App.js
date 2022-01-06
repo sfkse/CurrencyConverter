@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Card } from 'react-bootstrap';
+import { Alert, Button, Card } from 'react-bootstrap';
 import ExchangeResult from './components/ExchangeResult';
 import ExchangeInput from './components/ExchangeInput';
 
@@ -11,6 +11,7 @@ function App() {
   const [currencyList, setCurrencyList] = useState();
   const [selectedCurrency, setSelectedCurrency] = useState();
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState();
 
 
   const handleChange = (e) => {
@@ -24,12 +25,13 @@ function App() {
   const handleConvert = () => {
 
     if (amountToBeExchanged !== "") {
+      setErrorMessage('')
       const rate = data.rates[selectedCurrency];
       const exchangeResult = (+amountToBeExchanged * rate).toFixed(2);
       setExchangedAmount(exchangeResult);
     }
     else {
-      alert('Please enter an amount ')
+      setErrorMessage('Please enter an amount...')
     }
   }
 
@@ -38,6 +40,7 @@ function App() {
       <Card className='m-auto mt-5'>
         <Card.Body>
           <Card.Title style={{ textAlign: "center" }} >Currency Converter</Card.Title>
+          {errorMessage ? <Alert style={{ height: "30px", lineHeight: 0.05 }} variant="danger">{errorMessage}</Alert> : null}
           <ExchangeInput
             amountToBeExchanged={amountToBeExchanged}
             setAmountToBeExchanged={setAmountToBeExchanged}
